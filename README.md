@@ -1,4 +1,4 @@
-#Summits and Sand Website
+Summits and Sand Website
 =======
 
 
