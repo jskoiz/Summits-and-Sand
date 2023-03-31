@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Summits-and-Sand/static/css/main.e6c13ad2.css",
+    "main.js": "/Summits-and-Sand/static/js/main.73d563f6.js",
+    "static/media/home-c2-bg.jpg": "/Summits-and-Sand/static/media/home-c2-bg.8b4bcaa53adcfb7a14a0.jpg",
+    "static/media/yellow-paperback-p1.jpg": "/Summits-and-Sand/static/media/yellow-paperback-p1.90bd5232ecd338f4ae14.jpg",
+    "static/media/bluepattern.jpg": "/Summits-and-Sand/static/media/bluepattern.0978defc88ee3fddd201.jpg",
+    "static/media/logo.png": "/Summits-and-Sand/static/media/logo.39af96abdb09eabaa6ee.png",
+    "index.html": "/Summits-and-Sand/index.html",
+    "main.e6c13ad2.css.map": "/Summits-and-Sand/static/css/main.e6c13ad2.css.map",
+    "main.73d563f6.js.map": "/Summits-and-Sand/static/js/main.73d563f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.73d563f6.js"
+  ]
+}
