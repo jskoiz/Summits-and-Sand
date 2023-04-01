@@ -2,6 +2,7 @@
 import { styled } from '@mui/system';
 import { Card, CardMedia, Button, AppBar } from '@mui/material';
 
+
 export const useStyles = () => ({
   section: {
     marginTop: 2, // theme.spacing(4),
@@ -21,6 +22,11 @@ export const useStyles = () => ({
   },
   callToAction: {
     marginTop: 2, // theme.spacing(2),
+  },
+  fullWidthImage: {
+    display: 'block',
+    height: 'auto',
+    maxWidth: '100%',
   },
 });
 
@@ -52,4 +58,21 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => ({
     backgroundColor: 'white',
   }));
 
+
+  export const FullWidthImage = styled('img')({
+    display: 'block',
+    height: 'auto',
+    maxWidth: '100%',
+    width: '50%',
+  });
   
+  const CustomComponents = {
+    Section,
+    StyledCard,
+    StyledCardMedia,
+    CallToActionButton,
+    StyledAppBar,
+    FullWidthImage,
+  };
+  
+  export default CustomComponents;
