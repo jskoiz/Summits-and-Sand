@@ -3,46 +3,18 @@ import {
   Grid,
   Typography,
   Container,
-  Button,
   Box,
   TextField,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import { styled } from "@mui/system";
 import choco from "../assets/images/choco.png";
 import peach from "../assets/images/peach.png";
 import luna from "../assets/images/luna.png";
 import elle from "../assets/images/elle.png";
 import max from "../assets/images/max.png";
-import homeC2Bg from "../assets/images/home-c2-bg.jpg"; // Import the background image
 import patternBG from "../assets/images/bluepattern.jpg"; // Import the background image
 
-const ContentBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "white",
-  padding: theme.spacing(2),
-  borderRadius: theme.spacing(1),
-  paddingLeft: theme.spacing(100), // 5rem of padding on the left
-  paddingRight: theme.spacing(10), // 5rem of padding on the right
-  [theme.breakpoints.up("md")]: {
-    width: "530px", // Set the width to 530px on laptop displays and larger
-  },
-}));
 
-const YellowButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "#f5d600",
-  color: "white",
-  padding: theme.spacing(1),
-  width: "100%",
-  "&:hover": {
-    backgroundColor: "#d4b900",
-  },
-}));
-
-const FullWidthSection = styled(Box)(({ theme }) => ({
-  backgroundImage: `url(${homeC2Bg})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-}));
 
 const ContentContainer = styled(Container)(({ theme }) => ({
   maxWidth: 1200,
@@ -50,16 +22,11 @@ const ContentContainer = styled(Container)(({ theme }) => ({
   paddingRight: theme.spacing(2),
   marginLeft: "auto",
   marginRight: "auto",
+  marginTop: 0,
 }));
 
 const CenteredTextSection = styled(Box)(({ theme }) => ({
   backgroundColor: "white",
-}));
-
-const FullWidthImageOnly = styled(Box)(({ theme }) => ({
-  backgroundImage: `url(${patternBG})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
 }));
 
 const EmailSubscriptionSection = styled(Box)(({ theme }) => ({
@@ -84,15 +51,46 @@ const EmailInput = styled(TextField)(({ theme }) => ({
     color: "#ffffff",
   },
 }));
+const TitleBox = styled(Box)(({ theme }) => ({
+  backgroundColor: "white",
+  padding: theme.spacing(3, 10, 3, 10),
+  borderRadius: theme.spacing(1),
+}));
+const FullWidthSection = styled(Box)(({ theme }) => ({
+  backgroundImage: `url(${patternBG})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  marginBottom: "0rem",
+}));
 
 // home.js
 function Characters() {
   return (
-    <Box sx={{ marginTop: 4 }}>
+    <Box sx={{ marginTop: 0 }}>
+                  <FullWidthSection>
+        <ContentContainer>
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            spacing={2}
+            sx={{
+              minHeight: "400px",
+              padding: (theme) => theme.spacing(0, 2),
+            }}
+          >
+            <TitleBox>
+              <Typography variant="h4" align="center">
+                Characters
+              </Typography>
+            </TitleBox>
+          </Grid>
+        </ContentContainer>
+      </FullWidthSection>
       <ContentContainer>
         <Grid
   container
-  spacing={4}
+  spacing={0}
   alignItems="flex-start"
   justifyContent="center"
   sx={{
@@ -382,57 +380,12 @@ function Characters() {
             alignItems="center"
             spacing={2}
             sx={{
-              minHeight: "400px",
-              padding: (theme) => theme.spacing(0, 2),
-            }}
-          >
-            <Grid item xs={12} container justifyContent="center">
-              <ContentBox sx={{ padding: "4rem 3.5rem" }}>
-                <Typography variant="h5" align="center">
-                  Coloring Sheets Available!
-                </Typography>
-                <Typography variant="subtitle1" align="center">
-                  Get Individual Coloring Sheets - Digital Downloads
-                </Typography>
-                <Box
-                  mt={2}
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                >
-                  <YellowButton fullWidth component={Link} to="/sheet1">
-                    Sheet 1
-                  </YellowButton>{" "}
-                </Box>
-                <Box
-                  mt={2}
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                >
-                  <YellowButton fullWidth component={Link} to="/sheet2">
-                    Sheet 2
-                  </YellowButton>
-                </Box>
-              </ContentBox>
-            </Grid>
-          </Grid>
-        </ContentContainer>
-      </FullWidthSection>
-      <FullWidthImageOnly>
-        <ContentContainer>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            spacing={2}
-            sx={{
-              minHeight: "400px",
+              minHeight: "130px",
               padding: (theme) => theme.spacing(0, 2),
             }}
           ></Grid>
         </ContentContainer>
-      </FullWidthImageOnly>
+      </FullWidthSection>
       <EmailSubscriptionSection
         spacing={2}
         sx={{
