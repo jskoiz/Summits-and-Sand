@@ -1,6 +1,6 @@
 // customStyles.js
 import { styled } from '@mui/system';
-import { Card, CardMedia, Button, AppBar } from '@mui/material';
+import { Card, CardMedia, Button, AppBar, Typography } from '@mui/material';
 
 
 export const useStyles = () => ({
@@ -50,7 +50,7 @@ export const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
 }));
 
 export const CallToActionButton = styled(Button)(({ theme }) => ({
-  marginTop: theme.spacing(2),
+  marginTop: theme.spacing(5),
 }));
 
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -65,7 +65,11 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => ({
     maxWidth: '100%',
     width: '50%',
   });
-  
+  export const Paragraph = styled(Typography)(({ theme }) => ({
+    marginBottom: '1.5rem',
+    lineHeight: 1.8,
+  }));
+
   const CustomComponents = {
     Section,
     StyledCard,
@@ -73,6 +77,7 @@ export const StyledAppBar = styled(AppBar)(({ theme }) => ({
     CallToActionButton,
     StyledAppBar,
     FullWidthImage,
+    Paragraph,
   };
   
   export default CustomComponents;

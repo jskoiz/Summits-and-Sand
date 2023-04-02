@@ -1,5 +1,12 @@
 import React from "react";
-import { Grid, Typography, Container, Button, Box, TextField } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Container,
+  Button,
+  Box,
+  TextField,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/system";
 import bookCover from "../assets/images/yellow-paperback-p1.jpg";
@@ -55,7 +62,7 @@ const ContentContainer = styled(Container)(({ theme }) => ({
 }));
 
 const CenteredTextSection = styled(Box)(({ theme }) => ({
-  backgroundColor: 'white',
+  backgroundColor: "white",
 }));
 const FullWidthImageOnly = styled(Box)(({ theme }) => ({
   backgroundImage: `url(${patternBG})`,
@@ -64,32 +71,32 @@ const FullWidthImageOnly = styled(Box)(({ theme }) => ({
 }));
 
 const EmailSubscriptionSection = styled(Box)(({ theme }) => ({
-  backgroundColor: '#b2d6ec',
+  backgroundColor: "#b2d6ec",
   padding: theme.spacing(4),
-  color: '#ffffff',
+  color: "#ffffff",
 }));
 
 const EmailInput = styled(TextField)(({ theme }) => ({
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: '#ffffff',
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#ffffff",
     },
-    '&:hover fieldset': {
-      borderColor: '#ffffff',
+    "&:hover fieldset": {
+      borderColor: "#ffffff",
     },
-    '&.Mui-focused fieldset': {
-      borderColor: '#ffffff',
+    "&.Mui-focused fieldset": {
+      borderColor: "#ffffff",
     },
   },
-  '& .MuiInputBase-input': {
-    color: '#ffffff',
+  "& .MuiInputBase-input": {
+    color: "#ffffff",
   },
 }));
 
 // home.js
 function Home() {
   return (
-    <Box sx={{ marginTop: 4}}>
+    <Box sx={{ marginTop: 4 }}>
       <ContentContainer>
         <Grid
           container
@@ -97,7 +104,7 @@ function Home() {
           alignItems="center"
           sx={{
             minHeight: { xs: "auto", md: "700px" },
-            backgroundColor: "white",
+            backgroundColor: "white", paddingBottom: "5rem",
           }}
         >
           <Grid
@@ -153,11 +160,7 @@ function Home() {
             >
               $14.99
             </Typography>
-            <Typography
-              variant="body1"
-              gutterBottom
-              sx={{ marginBottom: "1.5rem" }}
-            >
+            <Typography>
               Explore the great outdoors and make unforgettable memories with
               the "Summits and Sand" coloring book! Featuring a variety of
               fun-filled activities, from hiking in the mountains to stargazing
@@ -224,17 +227,28 @@ function Home() {
           </Grid>
         </ContentContainer>
       </FullWidthSection>
-      <CenteredTextSection            spacing={2}
-            sx={{
-              minHeight: "200px",
-              padding: (theme) => theme.spacing(20, 10),
-            }}>
-        <Container maxWidth="md" >
+      <CenteredTextSection
+        spacing={2}
+        sx={{
+          minHeight: "200px",
+          padding: (theme) => theme.spacing(20, 10),
+        }}
+      >
+        <Container maxWidth="md">
           <Typography variant="h4" align="center" gutterBottom>
             Mindful Creativity from Summits & Sand
           </Typography>
           <Typography variant="body1" align="center">
-            Explore the great outdoors and make unforgettable memories with the “Summits & Sand” coloring book! Featuring a variety of fun-filled activities, from hiking in the mountains to stargazing while camping, this book is perfect for nature lovers of all ages. Enjoy fresh produce from a farmer's market, observe wildlife without disturbing their habitat, and take part in a beach clean up. With beautiful illustrations, this coloring book encourages you to explore the great outdoors while enjoying the company of others. Remember to recycle, plant a tree, and get a good night's rest to keep the environment thriving!
+            Explore the great outdoors and make unforgettable memories with the
+            “Summits & Sand” coloring book! Featuring a variety of fun-filled
+            activities, from hiking in the mountains to stargazing while
+            camping, this book is perfect for nature lovers of all ages. Enjoy
+            fresh produce from a farmer's market, observe wildlife without
+            disturbing their habitat, and take part in a beach clean up. With
+            beautiful illustrations, this coloring book encourages you to
+            explore the great outdoors while enjoying the company of others.
+            Remember to recycle, plant a tree, and get a good night's rest to
+            keep the environment thriving!
           </Typography>
         </Container>
       </CenteredTextSection>
@@ -249,16 +263,16 @@ function Home() {
               minHeight: "400px",
               padding: (theme) => theme.spacing(0, 2),
             }}
-          >
-            </Grid>
+          ></Grid>
         </ContentContainer>
       </FullWidthImageOnly>
-      <EmailSubscriptionSection          
-            spacing={2}
-            sx={{
-              minHeight: "50px",
-              padding: (theme) => theme.spacing(10, 10),
-            }}>
+      <EmailSubscriptionSection
+        spacing={2}
+        sx={{
+          minHeight: "50px",
+          padding: (theme) => theme.spacing(10, 10),
+        }}
+      >
         <Container maxWidth="md">
           <Typography variant="h4" align="center" gutterBottom>
             Subscribe to our emails
@@ -271,7 +285,7 @@ function Home() {
               placeholder="Email"
               variant="outlined"
               size="small"
-              sx={{ width: { xs: '100%', sm: '50%' } }}
+              sx={{ width: { xs: "100%", sm: "50%" } }}
             />
           </Box>
         </Container>
