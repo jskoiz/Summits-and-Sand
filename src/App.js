@@ -7,12 +7,27 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Characters from './pages/Characters';
 import Contact from './pages/Contact';
-
 const theme = createTheme({
   typography: {
-    fontFamily: ['Montserrat', 'sans-serif'].join(','),
+    fontFamily: ['Assistant', 'sans-serif'].join(','),
+    color: '#1a1a1a',
+    body1: {
+      lineHeight: 1.8,
+      marginBottom: '1.7rem',
+      fontSize: '1.1rem',
+      letterSpacing: '0.03038em',
+      color: '#464646',
+    },
+    h2: {
+      fontSize: '1.3rem',
+      fontWeight: '400',
+      marginBottom: '1.1rem',
+      color: '#464646',
+    },
   },
 });
+
+console.log(theme);
 
 function App() {
   return (
@@ -34,3 +49,4 @@ function App() {
 }
 
 export default App;
+export { theme };
