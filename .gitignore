@@ -11,6 +11,10 @@
 # production
 /build
 
+# ftp
+/.vscode
+stfp.json
+
 # misc
 .DS_Store
 .env.local
