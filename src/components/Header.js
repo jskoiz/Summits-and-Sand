@@ -85,7 +85,9 @@ function Header() {
         </Typography>
       </AnnouncementBar>
       <StyledToolbar>
-        <StyledLogo src={logo} alt="Logo" />
+      <Link to="/"> 
+          <StyledLogo src={logo} alt="Summits and Sand" />
+        </Link>
         <Grid container justifyContent="center" spacing={2}>
           <Grid item>
             <StyledButton component={Link} to="/" color="inherit">
