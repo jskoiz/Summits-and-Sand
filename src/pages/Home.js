@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-  Container,
-  Button,
-  Box,
-  TextField,
-} from "@mui/material";
+import { Grid, Typography, Container, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/system";
 import bookCover from "../assets/images/yellow-paperback-p1.jpg";
@@ -70,30 +63,6 @@ const FullWidthImageOnly = styled(Box)(({ theme }) => ({
   backgroundPosition: "center",
 }));
 
-const EmailSubscriptionSection = styled(Box)(({ theme }) => ({
-  backgroundColor: "#b2d6ec",
-  padding: theme.spacing(4),
-  color: "#ffffff",
-}));
-
-const EmailInput = styled(TextField)(({ theme }) => ({
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&:hover fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#ffffff",
-    },
-  },
-  "& .MuiInputBase-input": {
-    color: "#ffffff",
-  },
-}));
-
-// home.js
 function Home() {
   return (
     <Box sx={{ marginTop: 4 }}>
@@ -104,7 +73,8 @@ function Home() {
           alignItems="center"
           sx={{
             minHeight: { xs: "auto", md: "700px" },
-            backgroundColor: "white", paddingBottom: "5rem",
+            backgroundColor: "white",
+            paddingBottom: "5rem",
           }}
         >
           <Grid
@@ -197,10 +167,10 @@ function Home() {
             <Grid item xs={12} container justifyContent="center">
               <ContentBox sx={{ padding: "4rem 3.5rem" }}>
                 <Typography variant="h5" align="center">
-                  Coloring Sheets Available!
+                  Summits and Sand Coloring Books Available Now!
                 </Typography>
                 <Typography variant="subtitle1" align="center">
-                  Get Individual Coloring Sheets - Digital Downloads
+                  Get them at your favorite retailer below.
                 </Typography>
                 <Box
                   mt={2}
@@ -209,7 +179,7 @@ function Home() {
                   alignItems="center"
                 >
                   <YellowButton fullWidth component={Link} to="/sheet1">
-                    Sheet 1
+                    Barnes and Noble
                   </YellowButton>{" "}
                 </Box>
                 <Box
@@ -219,7 +189,7 @@ function Home() {
                   alignItems="center"
                 >
                   <YellowButton fullWidth component={Link} to="/sheet2">
-                    Sheet 2
+                    Bookstore.com
                   </YellowButton>
                 </Box>
               </ContentBox>
@@ -228,14 +198,15 @@ function Home() {
         </ContentContainer>
       </FullWidthSection>
       <CenteredTextSection
-  spacing={2}
-  sx={(theme) => ({
-    minHeight: "50px",
-    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
-    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
-      padding: theme.spacing(10, 10),
-    },
-  })}
+        spacing={2}
+        sx={(theme) => ({
+          minHeight: "50px",
+          padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
+          [theme.breakpoints.up("sm")]: {
+            // Add this block for larger screens
+            padding: theme.spacing(10, 10),
+          },
+        })}
       >
         <Container maxWidth="md">
           <Typography variant="h4" align="center" gutterBottom>
@@ -269,34 +240,6 @@ function Home() {
           ></Grid>
         </ContentContainer>
       </FullWidthImageOnly>
-      <EmailSubscriptionSection
-  spacing={2}
-  sx={(theme) => ({
-    minHeight: "50px",
-    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
-    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
-      padding: theme.spacing(10, 10),
-    },
-  })}
->
-
-        <Container maxWidth="md">
-          <Typography variant="h4" align="center" gutterBottom>
-            Subscribe to our emails
-          </Typography>
-          <Typography variant="subtitle1" align="center" gutterBottom>
-            Be the first to know about new collections and exclusive offers.
-          </Typography>
-          <Box display="flex" justifyContent="center">
-            <EmailInput
-              placeholder="Email"
-              variant="outlined"
-              size="small"
-              sx={{ width: { xs: "100%", sm: "50%" } }}
-            />
-          </Box>
-        </Container>
-      </EmailSubscriptionSection>
     </Box>
   );
 }

@@ -1,11 +1,6 @@
-import React from "react";
-import {
-  Grid,
-  Typography,
-  Container,
-  Box,
-  TextField,
-} from "@mui/material";
+import { React, useEffect } from "react";
+import { usePageTitle } from "../components/PageTitleContext";
+import { Grid, Typography, Container, Box } from "@mui/material";
 import { styled } from "@mui/system";
 import choco from "../assets/images/choco.png";
 import peach from "../assets/images/peach.png";
@@ -13,8 +8,6 @@ import luna from "../assets/images/luna.png";
 import elle from "../assets/images/elle.png";
 import max from "../assets/images/max.png";
 import patternBG from "../assets/images/bluepattern.jpg"; // Import the background image
-
-
 
 const ContentContainer = styled(Container)(({ theme }) => ({
   maxWidth: 1200,
@@ -29,33 +22,6 @@ const CenteredTextSection = styled(Box)(({ theme }) => ({
   backgroundColor: "white",
 }));
 
-const EmailSubscriptionSection = styled(Box)(({ theme }) => ({
-  backgroundColor: "#b2d6ec",
-  padding: theme.spacing(4),
-  color: "#ffffff",
-}));
-
-const EmailInput = styled(TextField)(({ theme }) => ({
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&:hover fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#ffffff",
-    },
-  },
-  "& .MuiInputBase-input": {
-    color: "#ffffff",
-  },
-}));
-const TitleBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "white",
-  padding: theme.spacing(3, 10, 3, 10),
-  borderRadius: theme.spacing(1),
-}));
 const FullWidthSection = styled(Box)(({ theme }) => ({
   backgroundImage: `url(${patternBG})`,
   backgroundSize: "cover",
@@ -63,49 +29,33 @@ const FullWidthSection = styled(Box)(({ theme }) => ({
   marginBottom: "0rem",
 }));
 
-// home.js
 function Characters() {
+  const { setPageTitle } = usePageTitle();
+
+  useEffect(() => {
+    setPageTitle("Characters");
+  }, [setPageTitle]);
   return (
     <Box sx={{ marginTop: 0 }}>
-                  <FullWidthSection>
-        <ContentContainer>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            spacing={2}
-            sx={{
-              minHeight: "400px",
-              padding: (theme) => theme.spacing(0, 2),
-            }}
-          >
-            <TitleBox>
-              <Typography variant="h4" align="center">
-                Characters
-              </Typography>
-            </TitleBox>
-          </Grid>
-        </ContentContainer>
-      </FullWidthSection>
       <ContentContainer>
         <Grid
-  container
-  spacing={0}
-  alignItems="flex-start"
-  justifyContent="center"
-  sx={{
-    minHeight: { xs: "auto", md: "700px" },
-    backgroundColor: "white",
-    paddingBottom: "5rem",
-  }}
+          container
+          spacing={0}
+          alignItems="flex-start"
+          justifyContent="center"
+          sx={{
+            minHeight: { xs: "auto", md: "700px" },
+            backgroundColor: "white",
+            paddingBottom: "5rem",
+          }}
         >
-  <CenteredTextSection
-    sx={{
-      minHeight: "10px",
-      padding: (theme) => theme.spacing(10, 1),
-    }}
-  >
-    <Container maxWidth="md">
+          <CenteredTextSection
+            sx={{
+              minHeight: "10px",
+              padding: (theme) => theme.spacing(10, 1),
+            }}
+          >
+            <Container maxWidth="md">
               <Typography variant="body1" align="center">
                 Meet the colorful characters of Summits and Sand! Choco, Peach,
                 Elle, Luna, and Max are a friendly group of animal professionals
@@ -133,18 +83,16 @@ function Characters() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={8} style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              sx={{ marginBottom: "1rem"}}
-            >
+          <Grid
+            item
+            xs={12}
+            md={8}
+            style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}
+          >
+            <Typography variant="h3" gutterBottom sx={{ marginBottom: "1rem" }}>
               Choco, Environmental Planning and Sustainability Specialist
             </Typography>
-            <Typography
-              gutterBottom
-              sx={{ marginBottom: "1rem" }}
-            >
+            <Typography gutterBottom sx={{ marginBottom: "1rem" }}>
               Choco Bear is a passionate conservation biologist with a mission
               to protect and preserve our planet's precious resources. He has
               dedicated his career to developing innovative solutions to promote
@@ -202,7 +150,12 @@ function Characters() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={8} style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}>
+          <Grid
+            item
+            xs={12}
+            md={8}
+            style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}
+          >
             <Typography
               variant="h3"
               gutterBottom
@@ -211,10 +164,20 @@ function Characters() {
               Peach, Environmental Engineer
             </Typography>
             <Typography>
-            Peach is an environmental engineer who specializes in refuse management. She has a passion for sustainability and finding ways to reduce waste and protect the environment. With her expertise in engineering, Peach develops and implements waste management plans that prioritize recycling, composting, and minimizing the amount of waste that goes to landfills.
+              Peach is an environmental engineer who specializes in refuse
+              management. She has a passion for sustainability and finding ways
+              to reduce waste and protect the environment. With her expertise in
+              engineering, Peach develops and implements waste management plans
+              that prioritize recycling, composting, and minimizing the amount
+              of waste that goes to landfills.
             </Typography>
             <Typography>
-            In her free time, Peach enjoys outdoor activities such as hiking and camping, as well as trying out new recipes in the kitchen. She is committed to reducing food waste at home by meal planning and using up leftovers creatively. Peach is also an avid reader and enjoys learning about new advances in waste reduction technology and sustainable living practices.
+              In her free time, Peach enjoys outdoor activities such as hiking
+              and camping, as well as trying out new recipes in the kitchen. She
+              is committed to reducing food waste at home by meal planning and
+              using up leftovers creatively. Peach is also an avid reader and
+              enjoys learning about new advances in waste reduction technology
+              and sustainable living practices.
             </Typography>
           </Grid>
         </Grid>
@@ -250,7 +213,12 @@ function Characters() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={8} style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}>
+          <Grid
+            item
+            xs={12}
+            md={8}
+            style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}
+          >
             <Typography
               variant="h3"
               gutterBottom
@@ -259,13 +227,22 @@ function Characters() {
               Elle, Landscape Architect
             </Typography>
             <Typography>
-            Elle is a landscape architect with a degree in horticulture who specializes in creating sustainable outdoor spaces that are both beautiful and functional. She is also a skilled florist who enjoys creating stunning arrangements for special occasions.
+              Elle is a landscape architect with a degree in horticulture who
+              specializes in creating sustainable outdoor spaces that are both
+              beautiful and functional. She is also a skilled florist who enjoys
+              creating stunning arrangements for special occasions.
             </Typography>
             <Typography>
-            Elle's love for plants began when she studied botany in her undergraduate years. She combines her knowledge of plants with her creative talents to design outdoor spaces that are in harmony with the natural environment. In her free time, she volunteers at a local arboretum and shares her passion for plants with others.
+              Elle's love for plants began when she studied botany in her
+              undergraduate years. She combines her knowledge of plants with her
+              creative talents to design outdoor spaces that are in harmony with
+              the natural environment. In her free time, she volunteers at a
+              local arboretum and shares her passion for plants with others.
             </Typography>
             <Typography>
-            Overall, Elle is a talented and passionate individual who is dedicated to making the world a more beautiful and sustainable place.
+              Overall, Elle is a talented and passionate individual who is
+              dedicated to making the world a more beautiful and sustainable
+              place.
             </Typography>
           </Grid>
         </Grid>
@@ -301,7 +278,12 @@ function Characters() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={8} style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}>
+          <Grid
+            item
+            xs={12}
+            md={8}
+            style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}
+          >
             <Typography
               variant="h3"
               gutterBottom
@@ -310,13 +292,25 @@ function Characters() {
               Luna, Artist & Computer Engineer
             </Typography>
             <Typography>
-            Luna is a multi-talented individual who excels in both the arts and technology. As an artist, she specializes in painting, drawing, and sculpting and enjoys creating works that reflect the beauty and complexity of the world around her. As a computer engineer, Luna is passionate about using technology to make a positive impact on society and the environment.
+              Luna is a multi-talented individual who excels in both the arts
+              and technology. As an artist, she specializes in painting,
+              drawing, and sculpting and enjoys creating works that reflect the
+              beauty and complexity of the world around her. As a computer
+              engineer, Luna is passionate about using technology to make a
+              positive impact on society and the environment.
             </Typography>
             <Typography>
-            In her free time, Luna loves to explore the city's vibrant food scene and experiment with new recipes in the kitchen. She enjoys trying different cuisines and is always on the lookout for new restaurants and food trends. She also enjoys spending time outdoors, especially hiking and exploring the natural beauty of the world.
+              In her free time, Luna loves to explore the city's vibrant food
+              scene and experiment with new recipes in the kitchen. She enjoys
+              trying different cuisines and is always on the lookout for new
+              restaurants and food trends. She also enjoys spending time
+              outdoors, especially hiking and exploring the natural beauty of
+              the world.
             </Typography>
             <Typography>
-            With her creativity, technical skills, and love of adventure, Luna is an inspiration to those around her and a true champion of innovation and exploration.
+              With her creativity, technical skills, and love of adventure, Luna
+              is an inspiration to those around her and a true champion of
+              innovation and exploration.
             </Typography>
           </Grid>
         </Grid>
@@ -330,7 +324,6 @@ function Characters() {
             minHeight: { xs: "auto", md: "700px" },
             backgroundColor: "white",
             paddingBottom: "5rem",
-            
           }}
         >
           <Grid
@@ -353,8 +346,11 @@ function Characters() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={8}
-           style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}
+          <Grid
+            item
+            xs={12}
+            md={8}
+            style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}
           >
             <Typography
               variant="h3"
@@ -364,13 +360,24 @@ function Characters() {
               Max, Coastal Use Planner
             </Typography>
             <Typography>
-            Max is a coastal land use planner, specializing in developing strategies to preserve and protect our beaches and ocean fronts. He holds a PhD in Earth Sciences. Through his work, Max has developed a keen understanding of the complex issues of the geological processes that shape coastlines and how human activity impacts these fragile ecosystems. As a coastal land use planner, Max works tirelessly to balance the needs of the community with the preservation of the natural environment. 
+              Max is a coastal land use planner, specializing in developing
+              strategies to preserve and protect our beaches and ocean fronts.
+              He holds a PhD in Earth Sciences. Through his work, Max has
+              developed a keen understanding of the complex issues of the
+              geological processes that shape coastlines and how human activity
+              impacts these fragile ecosystems. As a coastal land use planner,
+              Max works tirelessly to balance the needs of the community with
+              the preservation of the natural environment.
             </Typography>
             <Typography>
-            As a penguin, Max has a natural affinity for the water and is dedicated to ensuring that our coasts remain healthy and thriving for future generations.
+              As a penguin, Max has a natural affinity for the water and is
+              dedicated to ensuring that our coasts remain healthy and thriving
+              for future generations.
             </Typography>
             <Typography>
-            In his free time, Max enjoys exploring the coast and observing the diverse marine life that inhabits the rocky shores and sandy beaches.
+              In his free time, Max enjoys exploring the coast and observing the
+              diverse marine life that inhabits the rocky shores and sandy
+              beaches.
             </Typography>
           </Grid>
         </Grid>
@@ -389,33 +396,6 @@ function Characters() {
           ></Grid>
         </ContentContainer>
       </FullWidthSection>
-      <EmailSubscriptionSection
-  spacing={2}
-  sx={(theme) => ({
-    minHeight: "50px",
-    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
-    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
-      padding: theme.spacing(10, 10),
-    },
-  })}
->
-        <Container maxWidth="md">
-          <Typography variant="h4" align="center" gutterBottom>
-            Subscribe to our emails
-          </Typography>
-          <Typography variant="subtitle1" align="center" gutterBottom>
-            Be the first to know about new collections and exclusive offers.
-          </Typography>
-          <Box display="flex" justifyContent="center">
-            <EmailInput
-              placeholder="Email"
-              variant="outlined"
-              size="small"
-              sx={{ width: { xs: "100%", sm: "50%" } }}
-            />
-          </Box>
-        </Container>
-      </EmailSubscriptionSection>
     </Box>
   );
 }

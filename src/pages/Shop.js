@@ -1,12 +1,6 @@
-import React from "react";
-import {
-  Grid,
-  Typography,
-  Container,
-  Button,
-  Box,
-  TextField,
-} from "@mui/material";
+import { React, useEffect } from "react";
+import { usePageTitle } from "../components/PageTitleContext";
+import { Grid, Typography, Container, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/system";
 import bookCover from "../assets/images/yellow-paperback-p1.jpg";
@@ -26,8 +20,6 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-
-
 const ContentContainer = styled(Container)(({ theme }) => ({
   maxWidth: 1200,
   paddingLeft: theme.spacing(2),
@@ -36,66 +28,20 @@ const ContentContainer = styled(Container)(({ theme }) => ({
   marginRight: "auto",
 }));
 
-
 const FullWidthSection = styled(Box)(({ theme }) => ({
   backgroundImage: `url(${patternBG})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
-
 }));
 
-const EmailSubscriptionSection = styled(Box)(({ theme }) => ({
-  backgroundColor: "#b2d6ec",
-  padding: theme.spacing(4),
-  color: "#ffffff",
-}));
-
-const EmailInput = styled(TextField)(({ theme }) => ({
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&:hover fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#ffffff",
-    },
-  },
-  "& .MuiInputBase-input": {
-    color: "#ffffff",
-  },
-}));
-const TitleBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "white",
-  padding: theme.spacing(3, 10, 3, 10),
-  borderRadius: theme.spacing(1),
-}));
-
-// home.js
 function Shop() {
+  const { setPageTitle } = usePageTitle();
+
+  useEffect(() => {
+    setPageTitle("Shop");
+  }, [setPageTitle]);
   return (
     <Box sx={{ marginTop: 0 }}>
-            <FullWidthSection>
-        <ContentContainer>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            spacing={0}
-            sx={{
-              minHeight: "400px",
-              padding: (theme) => theme.spacing(0, 2),
-            }}
-          >
-            <TitleBox>
-              <Typography variant="h4" align="center">
-                Shop
-              </Typography>
-            </TitleBox>
-          </Grid>
-        </ContentContainer>
-      </FullWidthSection>
       <ContentContainer>
         <Grid
           container
@@ -103,7 +49,9 @@ function Shop() {
           alignItems="center"
           sx={{
             minHeight: { xs: "auto", md: "700px" },
-            backgroundColor: "white", paddingBottom: "5rem", paddingTop: "5rem"
+            backgroundColor: "white",
+            paddingBottom: "5rem",
+            paddingTop: "5rem",
           }}
         >
           <Grid
@@ -186,7 +134,8 @@ function Shop() {
           alignItems="center"
           sx={{
             minHeight: { xs: "auto", md: "700px" },
-            backgroundColor: "white", paddingBottom: "5rem",
+            backgroundColor: "white",
+            paddingBottom: "5rem",
           }}
         >
           <Grid
@@ -264,7 +213,7 @@ function Shop() {
           </Grid>
         </Grid>
       </ContentContainer>
-      
+
       <FullWidthSection>
         <ContentContainer>
           <Grid
@@ -279,33 +228,6 @@ function Shop() {
           ></Grid>
         </ContentContainer>
       </FullWidthSection>
-      <EmailSubscriptionSection
-  spacing={2}
-  sx={(theme) => ({
-    minHeight: "50px",
-    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
-    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
-      padding: theme.spacing(10, 10),
-    },
-  })}
->
-        <Container maxWidth="md">
-          <Typography variant="h4" align="center" gutterBottom>
-            Subscribe to our emails
-          </Typography>
-          <Typography variant="subtitle1" align="center" gutterBottom>
-            Be the first to know about new collections and exclusive offers.
-          </Typography>
-          <Box display="flex" justifyContent="center">
-            <EmailInput
-              placeholder="Email"
-              variant="outlined"
-              size="small"
-              sx={{ width: { xs: "100%", sm: "50%" } }}
-            />
-          </Box>
-        </Container>
-      </EmailSubscriptionSection>
     </Box>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect } from "react";
 import {
   Grid,
   Typography,
@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import patternBG from "../assets/images/bluepattern.jpg"; // Import the background image
+import { usePageTitle } from "../components/PageTitleContext";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   backgroundColor: "#f5d600",
@@ -39,62 +40,14 @@ const FullWidthSection = styled(Box)(({ theme }) => ({
   backgroundPosition: "center",
 }));
 
-const EmailSubscriptionSection = styled(Box)(({ theme }) => ({
-  backgroundColor: "#b2d6ec",
-  padding: theme.spacing(4),
-  color: "#ffffff",
-}));
-
-const EmailInput = styled(TextField)(({ theme }) => ({
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&:hover fieldset": {
-      borderColor: "#ffffff",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#ffffff",
-    },
-  },
-  "& .MuiInputBase-input": {
-    color: "#ffffff",
-  },
-}));
-const TitleBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "white",
-  padding: theme.spacing(3, 10, 3, 10),
-  borderRadius: theme.spacing(1),
-}));
-
-// home.js
 function Contact() {
+  const { setPageTitle } = usePageTitle();
+
+  useEffect(() => {
+    setPageTitle("Contact");
+  }, [setPageTitle]);
   return (
     <Box sx={{ marginTop: 0 }}>
-      <FullWidthSection>
-        <ContentContainer>
-        <Grid
-  container
-  justifyContent="center"
-  alignItems="center"
-  spacing={2}
-  sx={(theme) => ({
-    minHeight: { xs: "200px", md: "400px" }, // Set minHeight to 200px on mobile, 400px on larger screens
-    padding: theme.spacing(0, 2),
-  })}
->
-  <TitleBox>
-    <Typography
-      variant={{ xs: "h4", md: "h4" }} // Use h5 variant on mobile, h4 variant on larger screens
-      align="center"
-    >
-      Contact Us
-    </Typography>
-  </TitleBox>
-</Grid>
-
-        </ContentContainer>
-      </FullWidthSection>
       <CenteredTextSection
         spacing={2}
         sx={{
@@ -104,9 +57,6 @@ function Contact() {
         }}
       >
         <Container maxWidth="md">
-          <Typography variant="h4" align="center" gutterBottom>
-            Contact Us
-          </Typography>
           <Typography variant="body1" align="center">
             <Box
               component="form"
@@ -173,33 +123,6 @@ function Contact() {
           ></Grid>
         </ContentContainer>
       </FullWidthSection>
-      <EmailSubscriptionSection
-  spacing={2}
-  sx={(theme) => ({
-    minHeight: "50px",
-    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
-    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
-      padding: theme.spacing(10, 10),
-    },
-  })}
->
-        <Container maxWidth="md">
-          <Typography variant="h4" align="center" gutterBottom>
-            Subscribe to our emails
-          </Typography>
-          <Typography variant="subtitle1" align="center" gutterBottom>
-            Be the first to know about new collections and exclusive offers.
-          </Typography>
-          <Box display="flex" justifyContent="center">
-            <EmailInput
-              placeholder="Email"
-              variant="outlined"
-              size="small"
-              sx={{ width: { xs: "100%", sm: "50%" } }}
-            />
-          </Box>
-        </Container>
-      </EmailSubscriptionSection>
     </Box>
   );
 }
