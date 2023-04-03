@@ -150,7 +150,7 @@ function Home() {
             </Typography>
             <StyledButton
               component={Link}
-              to="/external-site"
+              to="/shop"
               variant="outlined"
             >
               Buy Now
@@ -184,7 +184,7 @@ function Home() {
                   flexDirection="column"
                   alignItems="center"
                 >
-                  <YellowButton fullWidth component={Link} to="/sheet1">
+                  <YellowButton fullWidth component={Link} to="https://www.barnesandnoble.com/s/summits%20and%20sand%20coloring%20book">
                     Barnes and Noble
                   </YellowButton>{" "}
                 </Box>
@@ -194,8 +194,8 @@ function Home() {
                   flexDirection="column"
                   alignItems="center"
                 >
-                  <YellowButton fullWidth component={Link} to="/sheet2">
-                    Bookstore.com
+                  <YellowButton fullWidth component={Link} to="https://www.walmart.com/ip/Summits-Sand-Coloring-Book-Hardcover-9798987859735/3861160096">
+                    Wal-Mart.com
                   </YellowButton>
                 </Box>
               </ContentBox>
