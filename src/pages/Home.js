@@ -1,4 +1,5 @@
-import React from "react";
+import { React, useEffect } from "react";
+import { usePageTitle } from "../components/PageTitleContext";
 import { Grid, Typography, Container, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/system";
@@ -64,6 +65,11 @@ const FullWidthImageOnly = styled(Box)(({ theme }) => ({
 }));
 
 function Home() {
+  const { setPageTitle } = usePageTitle(); // Get the setPageTitle function from the context
+
+  useEffect(() => {
+    setPageTitle("Home"); // Set the page title when the component is mounted
+  }, [setPageTitle]); 
   return (
     <Box sx={{ marginTop: 4 }}>
       <ContentContainer>

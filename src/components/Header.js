@@ -109,26 +109,28 @@ function Header() {
           </Grid>
         </Grid>
       </StyledToolbar>
-      <FullWidthSection>
-        <ContentContainer>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            spacing={2}
-            sx={{
-              minHeight: "400px",
-              padding: (theme) => theme.spacing(0, 2),
-            }}
-          >
-            <TitleBox>
-              <Typography variant="h4" align="center">
-                {pageTitle}
-              </Typography>
-            </TitleBox>
-          </Grid>
-        </ContentContainer>
-      </FullWidthSection>
+      {pageTitle !== "Home" && (
+        <FullWidthSection>
+          <ContentContainer>
+            <Grid
+              container
+              justifyContent="center"
+              alignItems="center"
+              spacing={2}
+              sx={{
+                minHeight: "400px",
+                padding: (theme) => theme.spacing(0, 2),
+              }}
+            >
+              <TitleBox>
+                <Typography variant="h4" align="center">
+                  {pageTitle}
+                </Typography>
+              </TitleBox>
+            </Grid>
+          </ContentContainer>
+        </FullWidthSection>
+      )}
     </StyledAppBar>
   );
 }
