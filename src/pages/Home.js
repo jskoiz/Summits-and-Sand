@@ -228,11 +228,14 @@ function Home() {
         </ContentContainer>
       </FullWidthSection>
       <CenteredTextSection
-        spacing={2}
-        sx={{
-          minHeight: "200px",
-          padding: (theme) => theme.spacing(20, 10),
-        }}
+  spacing={2}
+  sx={(theme) => ({
+    minHeight: "50px",
+    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
+    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
+      padding: theme.spacing(10, 10),
+    },
+  })}
       >
         <Container maxWidth="md">
           <Typography variant="h4" align="center" gutterBottom>
@@ -267,12 +270,16 @@ function Home() {
         </ContentContainer>
       </FullWidthImageOnly>
       <EmailSubscriptionSection
-        spacing={2}
-        sx={{
-          minHeight: "50px",
-          padding: (theme) => theme.spacing(10, 10),
-        }}
-      >
+  spacing={2}
+  sx={(theme) => ({
+    minHeight: "50px",
+    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
+    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
+      padding: theme.spacing(10, 10),
+    },
+  })}
+>
+
         <Container maxWidth="md">
           <Typography variant="h4" align="center" gutterBottom>
             Subscribe to our emails
