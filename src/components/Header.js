@@ -53,7 +53,7 @@ function Header() {
             },
           }}
         >
-          Pre-Order the Summits & Sand Coloring Book Today!
+          Order your Summits & Sand Coloring Book Today!
         </Typography>
       </AnnouncementBar>
       <StyledToolbar>
