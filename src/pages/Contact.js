@@ -73,22 +73,26 @@ function Contact() {
     <Box sx={{ marginTop: 0 }}>
       <FullWidthSection>
         <ContentContainer>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            spacing={2}
-            sx={{
-              minHeight: "400px",
-              padding: (theme) => theme.spacing(0, 2),
-            }}
-          >
-            <TitleBox>
-              <Typography variant="h4" align="center">
-                Contact Us
-              </Typography>
-            </TitleBox>
-          </Grid>
+        <Grid
+  container
+  justifyContent="center"
+  alignItems="center"
+  spacing={2}
+  sx={(theme) => ({
+    minHeight: { xs: "200px", md: "400px" }, // Set minHeight to 200px on mobile, 400px on larger screens
+    padding: theme.spacing(0, 2),
+  })}
+>
+  <TitleBox>
+    <Typography
+      variant={{ xs: "h4", md: "h4" }} // Use h5 variant on mobile, h4 variant on larger screens
+      align="center"
+    >
+      Contact Us
+    </Typography>
+  </TitleBox>
+</Grid>
+
         </ContentContainer>
       </FullWidthSection>
       <CenteredTextSection
@@ -170,12 +174,15 @@ function Contact() {
         </ContentContainer>
       </FullWidthSection>
       <EmailSubscriptionSection
-        spacing={2}
-        sx={{
-          minHeight: "50px",
-          padding: (theme) => theme.spacing(10, 10),
-        }}
-      >
+  spacing={2}
+  sx={(theme) => ({
+    minHeight: "50px",
+    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
+    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
+      padding: theme.spacing(10, 10),
+    },
+  })}
+>
         <Container maxWidth="md">
           <Typography variant="h4" align="center" gutterBottom>
             Subscribe to our emails

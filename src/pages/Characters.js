@@ -330,6 +330,7 @@ function Characters() {
             minHeight: { xs: "auto", md: "700px" },
             backgroundColor: "white",
             paddingBottom: "5rem",
+            
           }}
         >
           <Grid
@@ -352,7 +353,9 @@ function Characters() {
               }}
             />
           </Grid>
-          <Grid item xs={12} md={8} style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}>
+          <Grid item xs={12} md={8}
+           style={{ backgroundColor: "#f5d600", padding: "4rem 3rem" }}
+          >
             <Typography
               variant="h3"
               gutterBottom
@@ -387,12 +390,15 @@ function Characters() {
         </ContentContainer>
       </FullWidthSection>
       <EmailSubscriptionSection
-        spacing={2}
-        sx={{
-          minHeight: "50px",
-          padding: (theme) => theme.spacing(10, 10),
-        }}
-      >
+  spacing={2}
+  sx={(theme) => ({
+    minHeight: "50px",
+    padding: theme.spacing(10, 2), // Use 2 instead of 10 for side padding on mobile
+    [theme.breakpoints.up('sm')]: { // Add this block for larger screens
+      padding: theme.spacing(10, 10),
+    },
+  })}
+>
         <Container maxWidth="md">
           <Typography variant="h4" align="center" gutterBottom>
             Subscribe to our emails
